@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valor Egypt - SOP Knowledge Base Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        h1, h2, h3, .process-flow-title {
+            font-family: 'Caveat', cursive;
+        }
+        /* Scando Solutions Color Inspiration */
+        :root {
+            --scando-blue: #0A2342;
+            --scando-gold: #D4AF37; 
+            --scando-light-gray: #f8f9fa;
+            --scando-dark-gray: #343a40;
+        }
+        .bg-scando-blue { background-color: var(--scando-blue); }
+        .text-scando-gold { color: var(--scando-gold); }
+        .bg-scando-light-gray { background-color: var(--scando-light-gray); }
+        .text-scando-dark-gray { color: var(--scando-dark-gray); }
+        
+        .e2e-card {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            padding: 2.5rem;
+        }
+        .e2e-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px -5px rgba(10, 35, 66, 0.15);
+        }
+        .sop-card {
+            background-color: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.3s ease;
+        }
+        .sop-card:hover {
+            border-color: var(--scando-gold);
+        }
+        section {
+            scroll-margin-top: 90px;
+        }
+        .font-semibold { font-weight: 600; }
+        .font-normal { font-weight: 400; }
+        .font-light { font-weight: 300; }
+    </style>
+</head>
+<body class="bg-scando-light-gray text-scando-dark-gray">
+
+    <header class="bg-white/80 backdrop-blur-lg text-scando-dark-gray shadow-sm sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- Left Side: Icon and Title -->
+            <a href="#" class="flex items-center space-x-3">
+                <img src="https://i.ibb.co/8DprynwC/scandoicon.png" alt="Scando Integrated Solution Icon" class="h-10 w-10 object-contain" onerror="this.style.display='none'">
+                <h1 class="text-3xl font-bold text-scando-blue">Valor Egypt</h1>
+            </a>
+
+            <!-- Right Side: Navigation Links -->
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#e2e-navigation" class="text-base font-normal hover:text-scando-blue transition-colors duration-300">E2E Flows</a>
+                <a href="#detailed-framework" class="text-base font-normal hover:text-scando-blue transition-colors duration-300">SOP Framework</a>
+            </div>
+             <!-- Mobile Menu Button (Placeholder) -->
+            <div class="md:hidden">
+                 <button class="text-scando-blue focus:outline-none">
+                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                 </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 lg:px-8 py-12">
+
+        <section id="e2e-navigation" class="mb-20 pt-8">
+            <h2 class="text-5xl font-bold text-scando-blue mb-12 text-center">End-to-End Process Flows</h2>
+            
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Lead-to-Cash Card -->
+                <a href="#" class="e2e-card">
+                    <h3 class="text-4xl font-semibold text-scando-blue mb-4">Lead-to-Cash</h3>
+                    <p class="text-base font-light text-gray-600">This process covers the entire customer journey, from generating initial leads and closing sales, to delivering our training services and managing the final payment.</p>
+                </a>
+                
+                <!-- Procure-to-Pay Card -->
+                <a href="#" class="e2e-card">
+                    <h3 class="text-4xl font-semibold text-scando-blue mb-4">Procure-to-Pay</h3>
+                    <p class="text-base font-light text-gray-600">This process outlines the complete lifecycle of procurement, from ordering materials and services from our vendors to processing invoices and issuing payments.</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="detailed-framework">
+            <h2 class="text-5xl font-bold text-scando-blue mb-12 text-center pt-16">Detailed Process Framework</h2>
+            
+            <!-- Operating Processes -->
+            <div id="operating-processes" class="mb-16">
+                <h3 class="text-3xl font-normal text-gray-500 mb-8 pb-2 border-b border-gray-200">Operating Processes</h3>
+                
+                <div id="develop-products" scroll-margin-top="90px">
+                    <h4 class="text-3xl font-semibold text-scando-blue mb-6">2.0 Develop and Manage Products and Services</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">2.1.4</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Manage product and service master data</h5><p class="text-xs text-gray-500 mb-3">Govern and manage product/service development program</p><p class="text-sm font-light">Maintain a centralized and accurate repository of all information related to our training services, including course details, versions, and pricing.</p></div>
+                    </div>
+                </div>
+
+                <div id="market-sell" class="mt-12" scroll-margin-top="90px">
+                    <h4 class="text-3xl font-semibold text-scando-blue mb-6">3.0 Market and Sell Products and Services</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">3.5.1</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Manage leads/opportunities</h5><p class="text-xs text-gray-500 mb-3">Develop and manage sales plans</p><p class="text-sm font-light">Systematically track and nurture potential client inquiries and opportunities from initial contact through to the proposal stage.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">3.5.2</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Manage customers and accounts</h5><p class="text-xs text-gray-500 mb-3">Develop and manage sales plans</p><p class="text-sm font-light">Maintain detailed client records and relationships to foster long-term partnerships and identify future training needs.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">3.5.3</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Develop and manage sales proposals</h5><p class="text-xs text-gray-500 mb-3">Develop and manage sales plans</p<p class="text-sm font-light">Create and deliver compelling, customized training proposals and quotes that clearly address client requirements and objectives.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">3.5.4</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Manage sales orders</h5><p class="text-xs text-gray-500 mb-3">Develop and manage sales plans</p<p class="text-sm font-light">Process confirmed training engagements, ensuring all contractual details are accurately recorded and communicated to the delivery team.</p></div>
+                    </div>
+                </div>
+                
+                <div id="supply-chain" class="mt-12" scroll-margin-top="90px">
+                    <h4 class="text-3xl font-semibold text-scando-blue mb-6">4.0 Manage Supply Chain for Physical Products</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">4.2.3</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Order materials and services</h5><p class="text-xs text-gray-500 mb-3">Procure materials and services</p><p class="text-sm font-light">Execute the purchase of required goods and services, such as printing training manuals, booking venues, or acquiring software licenses.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">4.2.4</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Manage suppliers</h5><p class="text-xs text-gray-500 mb-3">Procure materials and services</p><p class="text-sm font-light">Monitor vendor performance and manage relationships to ensure the timely delivery and quality of all procured goods and services.</p></div>
+                    </div>
+                </div>
+
+                <div id="deliver-services" class="mt-12" scroll-margin-top="90px">
+                    <h4 class="text-3xl font-semibold text-scando-blue mb-6">5.0 Deliver Services</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">5.3.1</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Initiate service delivery</h5><p class="text-xs text-gray-500 mb-3">Deliver service to customer</p><p class="text-sm font-light">Formally kick-off training engagements by confirming scope, aligning with client objectives, and mobilizing the necessary training resources.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">5.3.2</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Execute service delivery</h5><p class="text-xs text-gray-500 mb-3">Deliver service to customer</p><p class="text-sm font-light">Conduct the training sessions as planned, managing all logistical and instructional aspects to ensure a high-quality learning experience.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">5.3.3</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Complete service delivery</h5><p class="text-xs text-gray-500 mb-3">Deliver service to customer</p><p class="text-sm font-light">Finalize the training engagement by collecting feedback, providing post-training support, and completing all administrative wrap-up tasks.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Management and Support Services -->
+            <div id="management-support-services" class="mt-16">
+                <h3 class="text-3xl font-normal text-gray-500 mb-8 pb-2 border-b border-gray-200">Management and Support Services</h3>
+                
+                <div id="manage-finance" scroll-margin-top="90px">
+                     <h4 class="text-3xl font-semibold text-scando-blue mb-6">9.0 Manage Financial Resources</h4>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- 9.1 -->
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.1.2</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Perform cost accounting and control</h5><p class="text-xs text-gray-500 mb-3">Perform planning and management accounting</p><p class="text-sm font-light">Track, analyze, and control the costs associated with each training program and consulting engagement to ensure profitability.</p></div>
+                        <!-- 9.2 -->
+                        <div class="sop-card" id="manage-finance-revenue"><span class="text-sm font-semibold text-scando-gold">9.2.2</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Invoice customer</h5><p class="text-xs text-gray-500 mb-3">Perform revenue accounting</p><p class="text-sm font-light">Generate and transmit accurate invoices to clients following the completion of training services, as per contractual terms.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.2.3</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Process accounts receivable (AR)</h5><p class="text-xs text-gray-500 mb-3">Perform revenue accounting</p><p class="text-sm font-light">Manage incoming client payments, apply them to outstanding invoices, and follow up on any delinquent accounts.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.2.4</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Manage and process collections</h5><p class="text-xs text-gray-500 mb-3">Perform revenue accounting</p><p class="text-sm font-light">Handle the process for collecting overdue payments in a professional and effective manner.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.2.5</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Manage and process adjustments/deductions</h5><p class="text-xs text-gray-500 mb-3">Perform revenue accounting</p><p class="text-sm font-light">Process any client deductions, credit notes, or billing adjustments accurately and in a timely fashion.</p></div>
+                        <!-- 9.3 -->
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.3.2</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Perform general accounting</h5><p class="text-xs text-gray-500 mb-3">Perform general accounting and reporting</p><p class="text-sm font-light">Maintain the company's general ledger by processing all financial transactions, including journal entries and account reconciliations.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.3.3</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Perform fixed-asset accounting</h5><p class="text-xs text-gray-500 mb-3">Perform general accounting and reporting</p><p class="text-sm font-light">Track and manage all company fixed assets, such as office equipment and training technology, including depreciation.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.3.4</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Perform financial reporting</h5><p class="text-xs text-gray-500 mb-3">Perform general accounting and reporting</p><p class="text-sm font-light">Prepare and distribute regular financial statements and management reports to support strategic decision-making.</p></div>
+                        <!-- 9.5 -->
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.5.1</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Report time</h5><p class="text-xs text-gray-500 mb-3">Process payroll</p><p class="text-sm font-light">Implement and manage the system for employees and trainers to accurately report their hours worked.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.5.2</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Manage pay</h5><p class="text-xs text-gray-500 mb-3">Process payroll</p><p class="text-sm font-light">Administer payroll for all employees and trainers, ensuring timely and accurate compensation and adherence to all regulations.</p></div>
+                        <!-- 9.6 -->
+                        <div class="sop-card" id="manage-finance-payable"><span class="text-sm font-semibold text-scando-gold">9.6.1</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Process accounts payable (AP)</h5><p class="text-xs text-gray-500 mb-3">Process accounts payable and expense reimbursements</p><p class="text-sm font-light">Verify and process vendor invoices, expense reports, and other payables for timely and accurate payment.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.6.2</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Process expense reimbursements</h5><p class="text-xs text-gray-500 mb-3">Process accounts payable and expense reimbursements</p><p class="text-sm font-light">Manage and reimburse all employee and trainer-submitted expenses according to company policy.</p></div>
+                        <!-- 9.7 -->
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.7.2</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Manage cash</h5><p class="text-xs text-gray-500 mb-3">Manage treasury operations</p><p class="text-sm font-light">Oversee the company's cash flow, manage bank accounts, and ensure sufficient liquidity for all operational needs.</p></div>
+                        <!-- 9.10 -->
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.10.1</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Monitor international rates</h5><p class="text-xs text-gray-500 mb-3">Manage international funds/consolidation</p><p class="text-sm font-light">Track foreign exchange rates for any international transactions or client engagements.</p></div>
+                        <div class="sop-card"><span class="text-sm font-semibold text-scando-gold">9.10.2</span><h5 class="text-lg font-semibold my-1 text-scando-dark-gray">Manage transactions</h5><p class="text-xs text-gray-500 mb-3">Manage international funds/consolidation</p><p class="text-sm font-light">Execute and account for all transactions involving foreign currencies.</p></div>
+                     </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-white text-scando-dark-gray text-center p-6 mt-16 border-t border-gray-200">
+        <p class="text-sm">&copy; 2025 Valor Egypt | Developed by Scando Integrated Solution</p>
+    </footer>
+
+</body>
+</html>
