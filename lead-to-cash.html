@@ -8,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- BPMN.js library -->
+    <link rel="stylesheet" href="https://unpkg.com/bpmn-js@17.1.0/dist/assets/bpmn-js.css">
+    <script src="https://unpkg.com/bpmn-js@17.1.0/dist/bpmn-viewer.development.js"></script>
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -35,26 +40,23 @@
         .font-normal { font-weight: 400; }
         .font-light { font-weight: 300; }
 
-        .flow-step {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .flow-step-content {
+        #bpmn-container {
+            height: 700px;
+            width: 100%;
             background-color: white;
             border: 1px solid #e9ecef;
-            border-top: 4px solid var(--scando-gold);
-            padding: 1.5rem;
             border-radius: 8px;
-            width: 100%;
-            height: 100%;
         }
-        .flow-arrow {
-            color: #d1d5db; /* gray-300 */
+        .bjs-powered-by {
+            display: none !important;
         }
-
+        .content-section {
+            background-color: white;
+            padding: 2rem 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            margin-bottom: 2rem;
+        }
     </style>
 </head>
 <body class="bg-scando-light-gray text-scando-dark-gray">
@@ -62,134 +64,293 @@
     <header class="bg-white/80 backdrop-blur-lg text-scando-dark-gray shadow-sm sticky top-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 lg:px-8 flex justify-between items-center h-20">
             <!-- Left Side: Icon and Title -->
-            <a href="#" class="flex items-center space-x-3">
+            <a href="index.html" class="flex items-center space-x-3">
                 <img src="https://i.ibb.co/8DprynwC/scandoicon.png" alt="Scando Integrated Solution Icon" class="h-10 w-10 object-contain" onerror="this.style.display='none'">
                 <h1 class="text-3xl font-bold text-scando-blue">Valor Egypt</h1>
             </a>
 
             <!-- Right Side: Navigation Links -->
             <div class="hidden md:flex items-center space-x-10">
-                <a href="#" class="text-base font-normal hover:text-scando-blue transition-colors duration-300">Back to Home</a>
+                <a href="index.html" class="text-base font-normal hover:text-scando-blue transition-colors duration-300">Back to Home</a>
             </div>
         </nav>
     </header>
 
     <main class="container mx-auto px-6 lg:px-8 py-12">
 
-        <section id="process-header" class="mb-16 text-center">
+        <section id="process-header" class="mb-12 text-center">
             <h2 class="text-6xl font-bold text-scando-blue">Lead-to-Cash</h2>
-            <p class="mt-4 text-xl font-light text-gray-600 max-w-3xl mx-auto">An end-to-end overview of our customer value chain, from the first contact to the final payment, ensuring a seamless and positive client experience.</p>
+            <p class="mt-4 text-xl font-light text-gray-600 max-w-3xl mx-auto">This document outlines the end-to-end Lead-to-Cash process, which covers the entire customer journey from initial engagement to final revenue collection.</p>
         </section>
 
-        <section id="process-flow" class="mb-20">
-            <div class="grid grid-cols-1 md:grid-cols-4 items-center gap-x-8 gap-y-12">
-                <!-- Step 1 -->
-                <div class="flow-step">
-                    <div class="flow-step-content">
-                        <span class="text-sm font-semibold text-scando-gold">Step 1</span>
-                        <h3 class="text-2xl font-semibold my-1 text-scando-dark-gray">Marketing & Sales</h3>
-                        <p class="text-sm font-light text-gray-500">Engage the market, generate leads, and create proposals.</p>
-                    </div>
-                </div>
-                <!-- Arrow 1 -->
-                <div class="flow-arrow hidden md:block text-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </div>
-                 <!-- Arrow for mobile -->
-                <div class="flow-arrow md:hidden text-center transform rotate-90">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </div>
+        <!-- Process Definition -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">1. Process Definition</h3>
+            <p class="text-base font-light text-gray-600">The Lead-to-Cash (L2C) process is a cross-functional, end-to-end business process that encompasses all the steps required to identify potential customers (leads), engage them to win their business, deliver the agreed-upon training services, and manage the resulting revenue and payment collection.</p>
+        </div>
+        
+        <!-- Objectives -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">2. Objectives</h3>
+            <p class="text-base font-light text-gray-600 mb-4">The primary objectives of the L2C process are to:</p>
+            <ul class="list-disc list-inside text-base font-light text-gray-600 space-y-2">
+                <li>Provide a seamless and positive experience for our clients throughout their entire journey with Valor Egypt.</li>
+                <li>Maximize revenue generation by efficiently converting leads into paying customers.</li>
+                <li>Ensure operational efficiency by clarifying roles, responsibilities, and hand-offs between departments.</li>
+                <li>Improve cash flow by ensuring timely and accurate billing and collections.</li>
+                <li>Provide clear visibility into the sales pipeline, service delivery status, and revenue forecast.</li>
+            </ul>
+        </div>
 
+        <!-- Scope -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">3. Scope</h3>
+            <p class="text-base font-light text-gray-600">The process begins when a potential customer is identified (a new lead) and ends when the final payment for the delivered services has been received and reconciled in our financial system. It covers all marketing, sales, service delivery, and financial activities related to a customer engagement.</p>
+        </div>
 
-                <!-- Step 2 -->
-                <div class="flow-step">
-                    <div class="flow-step-content">
-                        <span class="text-sm font-semibold text-scando-gold">Step 2</span>
-                        <h3 class="text-2xl font-semibold my-1 text-scando-dark-gray">Service Delivery</h3>
-                        <p class="text-sm font-light text-gray-500">Deliver high-quality training and consulting services.</p>
-                    </div>
-                </div>
-                <!-- Arrow 2 -->
-                <div class="flow-arrow hidden md:block text-center">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </div>
-                 <!-- Arrow for mobile -->
-                <div class="flow-arrow md:hidden text-center transform rotate-90">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                </div>
+        <!-- Process Model -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">4. Process Model</h3>
+            <p class="text-base font-light text-gray-600 mb-6">The following BPMN diagram illustrates the flow of activities and departmental hand-offs within the Lead-to-Cash process.</p>
+            <div id="bpmn-container"></div>
+        </div>
 
-                <!-- Step 3 -->
-                <div class="flow-step">
-                     <div class="flow-step-content">
-                        <span class="text-sm font-semibold text-scando-gold">Step 3</span>
-                        <h3 class="text-2xl font-semibold my-1 text-scando-dark-gray">Billing & Revenue</h3>
-                        <p class="text-sm font-light text-gray-500">Invoice clients and manage collections.</p>
-                    </div>
+        <!-- Stakeholders -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">5. Stakeholders</h3>
+            <p class="text-base font-light text-gray-600 mb-4">This end-to-end process involves collaboration across multiple functions. Key stakeholders include:</p>
+            <ul class="list-disc list-inside text-base font-light text-gray-600 space-y-2">
+                <li><b>Clients:</b> The external participants who initiate the process and receive our services.</li>
+                <li><b>Sales & Marketing Team:</b> Responsible for lead generation, nurturing, proposals, and closing deals.</li>
+                <li><b>Training & Consulting Team:</b> The subject matter experts who define and deliver the services.</li>
+                <li><b>Finance & Admin Team:</b> Responsible for contracts, invoicing, collections, and financial reporting.</li>
+            </ul>
+        </div>
+        
+        <!-- Processes Included -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">6. Processes Included</h3>
+            <p class="text-base font-light text-gray-600">The L2C flow is comprised of several Level 3 processes from our SOP Framework. The primary components are:</p>
+             <div class="mt-6 space-y-4">
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">3.5.1 Manage leads/opportunities</h4>
+                    <p class="text-sm font-light text-gray-600">Systematically track and nurture potential client inquiries and opportunities from initial contact through to the proposal stage.</p>
                 </div>
-                 <!-- Arrow 3 -->
-                 <div class="flow-arrow hidden md:block text-center">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                 <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">3.5.3 Develop and manage sales proposals</h4>
+                    <p class="text-sm font-light text-gray-600">Create and deliver compelling, customized training proposals and quotes that clearly address client requirements and objectives.</p>
                 </div>
-                 <!-- Arrow for mobile -->
-                 <div class="flow-arrow md:hidden text-center transform rotate-90">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">3.5.4 Manage sales orders</h4>
+                    <p class="text-sm font-light text-gray-600">Process confirmed training engagements, ensuring all contractual details are accurately recorded and communicated to the delivery team.</p>
                 </div>
-
-                <!-- Step 4 -->
-                 <div class="flow-step">
-                     <div class="flow-step-content">
-                        <span class="text-sm font-semibold text-scando-gold">Goal</span>
-                        <h3 class="text-2xl font-semibold my-1 text-scando-dark-gray">Value Realized</h3>
-                        <p class="text-sm font-light text-gray-500">Customer goal achieved and payment received.</p>
-                    </div>
+                 <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">5.3.1 Initiate service delivery</h4>
+                    <p class="text-sm font-light text-gray-600">Formally kick-off training engagements by confirming scope, aligning with client objectives, and mobilizing the necessary training resources.</p>
+                </div>
+                 <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">5.3.2 Execute service delivery</h4>
+                    <p class="text-sm font-light text-gray-600">Conduct the training sessions as planned, managing all logistical and instructional aspects to ensure a high-quality learning experience.</p>
+                </div>
+                 <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">9.2.2 Invoice customer</h4>
+                    <p class="text-sm font-light text-gray-600">Generate and transmit accurate invoices to clients following the completion of training services, as per contractual terms.</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">9.2.3 Process accounts receivable (AR)</h4>
+                    <p class="text-sm font-light text-gray-600">Manage incoming client payments, apply them to outstanding invoices, and follow up on any delinquent accounts.</p>
                 </div>
             </div>
-        </section>
-
-        <section id="process-details" class="bg-white p-8 md:p-12 rounded-lg border border-gray-200">
-            <h3 class="text-4xl font-bold text-scando-blue mb-8">Building Our Lead-to-Cash Process</h3>
-            <div class="space-y-10">
-                
-                <div>
-                    <h4 class="text-3xl font-semibold text-scando-dark-gray mb-3">1. Scope and Prioritize</h4>
-                    <p class="text-base font-light text-gray-600">The scope of this process begins with the first marketing touchpoint with a potential client and ends with the successful collection of payment for services rendered. We prioritize this flow because it is our primary value chain and directly impacts customer experience and revenue generation. It represents our core promise to the market.</p>
-                </div>
-
-                <div>
-                    <h4 class="text-3xl font-semibold text-scando-dark-gray mb-3">2. Identify and Engage Stakeholders</h4>
-                    <p class="text-base font-light text-gray-600 mb-4">This process involves collaboration across multiple functions. Key stakeholders include:</p>
-                    <ul class="list-disc list-inside text-base font-light text-gray-600 space-y-2">
-                        <li><b>Clients:</b> The recipients of our services and the focus of our value delivery.</li>
-                        <li><b>Sales & Marketing Team:</b> Responsible for lead generation, nurturing, and closing deals.</li>
-                        <li><b>Training & Consulting Team:</b> The subject matter experts who define and deliver the services.</li>
-                        <li><b>Finance & Admin Team:</b> Responsible for contracts, invoicing, collections, and financial reporting.</li>
-                        <li><b>Management:</b> Provides oversight, strategy, and resources.</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-3xl font-semibold text-scando-dark-gray mb-3">3. Identify Process Components</h4>
-                    <p class="text-base font-light text-gray-600">The process is built from components within our SOP Framework, which are documented through workshops with subject matter experts from each functional team. The primary components are:</p>
-                     <ul class="list-disc list-inside text-base font-light text-gray-600 space-y-2 mt-4">
-                        <li><b>Market and Sell Products and Services (3.0):</b> Creating awareness and generating sales orders.</li>
-                        <li><b>Deliver Services (5.0):</b> Fulfilling the sales order by delivering high-quality training.</li>
-                        <li><b>Perform Revenue Accounting (9.2):</b> Managing the financial settlement of the service.</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-3xl font-semibold text-scando-dark-gray mb-3">4. Apply a Life Cycle Perspective</h4>
-                    <p class="text-base font-light text-gray-600">We view this process through a complete life cycle lens to ensure a seamless customer experience. This means managing the hand-offs between teams effectively—from sales to delivery, and from delivery to finance. The goal is to create a single, unified journey for the client, where each stage builds upon the last, reinforcing the value and professionalism of Valor Egypt.</p>
-                </div>
-
-            </div>
-        </section>
+        </div>
 
     </main>
 
     <footer class="bg-white text-scando-dark-gray text-center p-6 mt-16 border-t border-gray-200">
         <p class="text-sm">&copy; 2025 Valor Egypt | Developed by Scando Integrated Solution</p>
     </footer>
+
+    <script>
+        const bpmnContainer = document.getElementById('bpmn-container');
+        const bpmnViewer = new BpmnJS({
+            container: bpmnContainer
+        });
+
+        const bpmnXML = `<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:collaboration id="Collaboration_1">
+    <bpmn:participant id="Participant_Process" name="Valor Egypt Lead-to-Cash Process" processRef="Process_1" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_1">
+      <bpmn:lane id="Lane_Sales" name="Sales &amp; Marketing">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_3_5_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_3_5_3</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_3_5_4</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Training" name="Training &amp; Consulting">
+        <bpmn:flowNodeRef>Task_5_3_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_5_3_2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_5_3_3</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Finance" name="Finance &amp; Admin">
+        <bpmn:flowNodeRef>Task_9_2_2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_9_2_3</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_1</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1" name="Lead Identified">
+      <bpmn:outgoing>SequenceFlow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_3_5_1" name="Manage Lead / Opportunity (3.5.1)">
+      <bpmn:incoming>SequenceFlow_1</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_3_5_3" name="Develop Sales Proposal (3.5.3)">
+      <bpmn:incoming>SequenceFlow_2</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_3_5_4" name="Manage Sales Order (3.5.4)">
+      <bpmn:incoming>SequenceFlow_3</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_5_3_1" name="Initiate Service Delivery (5.3.1)">
+      <bpmn:incoming>SequenceFlow_4</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_5_3_2" name="Execute Service Delivery (5.3.2)">
+      <bpmn:incoming>SequenceFlow_5</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_5_3_3" name="Complete Service Delivery (5.3.3)">
+      <bpmn:incoming>SequenceFlow_6</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_9_2_2" name="Invoice Customer (9.2.2)">
+      <bpmn:incoming>SequenceFlow_7</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_8</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_9_2_3" name="Process Accounts Receivable (9.2.3)">
+      <bpmn:incoming>SequenceFlow_8</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_9</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_1" name="Payment Received">
+      <bpmn:incoming>SequenceFlow_9</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1" sourceRef="StartEvent_1" targetRef="Task_3_5_1" />
+    <bpmn:sequenceFlow id="SequenceFlow_2" sourceRef="Task_3_5_1" targetRef="Task_3_5_3" />
+    <bpmn:sequenceFlow id="SequenceFlow_3" sourceRef="Task_3_5_3" targetRef="Task_3_5_4" />
+    <bpmn:sequenceFlow id="SequenceFlow_4" sourceRef="Task_3_5_4" targetRef="Task_5_3_1" />
+    <bpmn:sequenceFlow id="SequenceFlow_5" sourceRef="Task_5_3_1" targetRef="Task_5_3_2" />
+    <bpmn:sequenceFlow id="SequenceFlow_6" sourceRef="Task_5_3_2" targetRef="Task_5_3_3" />
+    <bpmn:sequenceFlow id="SequenceFlow_7" sourceRef="Task_5_3_3" targetRef="Task_9_2_2" />
+    <bpmn:sequenceFlow id="SequenceFlow_8" sourceRef="Task_9_2_2" targetRef="Task_9_2_3" />
+    <bpmn:sequenceFlow id="SequenceFlow_9" sourceRef="Task_9_2_3" targetRef="EndEvent_1" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1">
+      <bpmndi:BPMNShape id="Participant_Process_di" bpmnElement="Participant_Process" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1350" height="450" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Sales_di" bpmnElement="Lane_Sales" isHorizontal="true">
+        <dc:Bounds x="190" y="80" width="1320" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Training_di" bpmnElement="Lane_Training" isHorizontal="true">
+        <dc:Bounds x="190" y="230" width="1320" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Finance_di" bpmnElement="Lane_Finance" isHorizontal="true">
+        <dc:Bounds x="190" y="380" width="1320" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="242" y="142" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="226" y="185" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_3_5_1_di" bpmnElement="Task_3_5_1">
+        <dc:Bounds x="330" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_3_5_3_di" bpmnElement="Task_3_5_3">
+        <dc:Bounds x="480" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_3_5_4_di" bpmnElement="Task_3_5_4">
+        <dc:Bounds x="630" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_5_3_1_di" bpmnElement="Task_5_3_1">
+        <dc:Bounds x="780" y="265" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_5_3_2_di" bpmnElement="Task_5_3_2">
+        <dc:Bounds x="930" y="265" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_5_3_3_di" bpmnElement="Task_5_3_3">
+        <dc:Bounds x="1080" y="265" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_9_2_2_di" bpmnElement="Task_9_2_2">
+        <dc:Bounds x="1230" y="415" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_9_2_3_di" bpmnElement="Task_9_2_3">
+        <dc:Bounds x="1380" y="415" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1_di" bpmnElement="EndEvent_1">
+        <dc:Bounds x="1532" y="437" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1508" y="480" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1_di" bpmnElement="SequenceFlow_1">
+        <di:waypoint x="278" y="160" />
+        <di:waypoint x="330" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_2_di" bpmnElement="SequenceFlow_2">
+        <di:waypoint x="430" y="160" />
+        <di:waypoint x="480" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_3_di" bpmnElement="SequenceFlow_3">
+        <di:waypoint x="580" y="160" />
+        <di:waypoint x="630" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_4_di" bpmnElement="SequenceFlow_4">
+        <di:waypoint x="680" y="200" />
+        <di:waypoint x="680" y="305" />
+        <di:waypoint x="780" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_5_di" bpmnElement="SequenceFlow_5">
+        <di:waypoint x="880" y="305" />
+        <di:waypoint x="930" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_6_di" bpmnElement="SequenceFlow_6">
+        <di:waypoint x="1030" y="305" />
+        <di:waypoint x="1080" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_7_di" bpmnElement="SequenceFlow_7">
+        <di:waypoint x="1130" y="345" />
+        <di:waypoint x="1130" y="455" />
+        <di:waypoint x="1230" y="455" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_8_di" bpmnElement="SequenceFlow_8">
+        <di:waypoint x="1330" y="455" />
+        <di:waypoint x="1380" y="455" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_9_di" bpmnElement="SequenceFlow_9">
+        <di:waypoint x="1480" y="455" />
+        <di:waypoint x="1532" y="455" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>`;
+
+        async function openDiagram(bpmnXML) {
+            try {
+                await bpmnViewer.importXML(bpmnXML);
+                const canvas = bpmnViewer.get('canvas');
+                canvas.zoom('fit-viewport', 'auto');
+            } catch (err) {
+                console.error('could not import BPMN 2.0 diagram', err);
+            }
+        }
+
+        openDiagram(bpmnXML);
+    </script>
 
 </body>
 </html>
