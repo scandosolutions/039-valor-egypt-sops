@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valor Egypt - Lead-to-Cash E2E Process</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        h1, h2, h3, h4, .process-flow-title {
+            font-family: 'Caveat', cursive;
+        }
+        /* Scando Solutions Color Inspiration */
+        :root {
+            --scando-blue: #0A2342;
+            --scando-gold: #D4AF37; 
+            --scando-light-gray: #f8f9fa;
+            --scando-dark-gray: #343a40;
+        }
+        .bg-scando-blue { background-color: var(--scando-blue); }
+        .text-scando-gold { color: var(--scando-gold); }
+        .bg-scando-light-gray { background-color: var(--scando-light-gray); }
+        .text-scando-dark-gray { color: var(--scando-dark-gray); }
+        
+        .font-semibold { font-weight: 600; }
+        .font-normal { font-weight: 400; }
+        .font-light { font-weight: 300; }
+
+        .flow-step {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .flow-step-content {
+            background-color: white;
+            border: 1px solid #e9ecef;
+            border-top: 4px solid var(--scando-gold);
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+        }
+        .flow-arrow {
+            color: #d1d5db; /* gray-300 */
+        }
+
+    </style>
+</head>
+<body class="bg-scando-light-gray text-scando-dark-gray">
+
+    <header class="bg-white/80 backdrop-blur-lg text-scando-dark-gray shadow-sm sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- Left Side: Icon and Title -->
+            <a href="#" class="flex items-center space-x-3">
+                <img src="https://i.ibb.co/8DprynwC/scandoicon.png" alt="Scando Integrated Solution Icon" class="h-10 w-10 object-contain" onerror="this.style.display='none'">
+                <h1 class="text-3xl font-bold text-scando-blue">Valor Egypt</h1>
+            </a>
+
+            <!-- Right Side: Navigation Links -->
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#" class="text-base font-normal hover:text-scando-blue transition-colors duration-300">Back to Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 lg:px-8 py-12">
+
+        <section id="process-header" class="mb-16 text-center">
+            <h2 class="text-6xl font-bold text-scando-blue">Lead-to-Cash</h2>
+            <p class="mt-4 text-xl font-light text-gray-600 max-w-3xl mx-auto">An end-to-end overview of our customer value chain, from the first contact to the final payment, ensuring a seamless and positive client experience.</p>
+        </section>
+
+        <section id="process-flow" class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-4 items-center gap-x-8 gap-y-12">
+                <!-- Step 1 -->
+                <div class="flow-step">
+                    <div class="flow-step-content">
+                        <span class="text-sm font-semibold text-scando-gold">Step 1</span>
+                        <h3 class="text-2xl font-semibold my-1 text-scando-dark-gray">Marketing & Sales</h3>
+                        <p class="text-sm font-light text-gray-500">Engage the market, generate leads, and create proposals.</p>
+                    </div>
+                </div>
+                <!-- Arrow 1 -->
+                <div class="flow-arrow hidden md:block text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+                 <!-- Arrow for mobile -->
+                <div class="flow-arrow md:hidden text-center transform rotate-90">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+
+
+                <!-- Step 2 -->
+                <div class="flow-step">
+                    <div class="flow-step-content">
+                        <span class="text-sm font-semibold text-scando-gold">Step 2</span>
+                        <h3 class="text-2xl font-semibold my-1 text-scando-dark-gray">Service Delivery</h3>
+                        <p class="text-sm font-light text-gray-500">Deliver high-quality training and consulting services.</p>
+                    </div>
+                </div>
+                <!-- Arrow 2 -->
+                <div class="flow-arrow hidden md:block text-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+                 <!-- Arrow for mobile -->
+                <div class="flow-arrow md:hidden text-center transform rotate-90">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flow-step">
+                     <div class="flow-step-content">
+                        <span class="text-sm font-semibold text-scando-gold">Step 3</span>
+                        <h3 class="text-2xl font-semibold my-1 text-scando-dark-gray">Billing & Revenue</h3>
+                        <p class="text-sm font-light text-gray-500">Invoice clients and manage collections.</p>
+                    </div>
+                </div>
+                 <!-- Arrow 3 -->
+                 <div class="flow-arrow hidden md:block text-center">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+                 <!-- Arrow for mobile -->
+                 <div class="flow-arrow md:hidden text-center transform rotate-90">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </div>
+
+                <!-- Step 4 -->
+                 <div class="flow-step">
+                     <div class="flow-step-content">
+                        <span class="text-sm font-semibold text-scando-gold">Goal</span>
+                        <h3 class="text-2xl font-semibold my-1 text-scando-dark-gray">Value Realized</h3>
+                        <p class="text-sm font-light text-gray-500">Customer goal achieved and payment received.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process-details" class="bg-white p-8 md:p-12 rounded-lg border border-gray-200">
+            <h3 class="text-4xl font-bold text-scando-blue mb-8">Building Our Lead-to-Cash Process</h3>
+            <div class="space-y-10">
+                
+                <div>
+                    <h4 class="text-3xl font-semibold text-scando-dark-gray mb-3">1. Scope and Prioritize</h4>
+                    <p class="text-base font-light text-gray-600">The scope of this process begins with the first marketing touchpoint with a potential client and ends with the successful collection of payment for services rendered. We prioritize this flow because it is our primary value chain and directly impacts customer experience and revenue generation. It represents our core promise to the market.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-3xl font-semibold text-scando-dark-gray mb-3">2. Identify and Engage Stakeholders</h4>
+                    <p class="text-base font-light text-gray-600 mb-4">This process involves collaboration across multiple functions. Key stakeholders include:</p>
+                    <ul class="list-disc list-inside text-base font-light text-gray-600 space-y-2">
+                        <li><b>Clients:</b> The recipients of our services and the focus of our value delivery.</li>
+                        <li><b>Sales & Marketing Team:</b> Responsible for lead generation, nurturing, and closing deals.</li>
+                        <li><b>Training & Consulting Team:</b> The subject matter experts who define and deliver the services.</li>
+                        <li><b>Finance & Admin Team:</b> Responsible for contracts, invoicing, collections, and financial reporting.</li>
+                        <li><b>Management:</b> Provides oversight, strategy, and resources.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-3xl font-semibold text-scando-dark-gray mb-3">3. Identify Process Components</h4>
+                    <p class="text-base font-light text-gray-600">The process is built from components within our SOP Framework, which are documented through workshops with subject matter experts from each functional team. The primary components are:</p>
+                     <ul class="list-disc list-inside text-base font-light text-gray-600 space-y-2 mt-4">
+                        <li><b>Market and Sell Products and Services (3.0):</b> Creating awareness and generating sales orders.</li>
+                        <li><b>Deliver Services (5.0):</b> Fulfilling the sales order by delivering high-quality training.</li>
+                        <li><b>Perform Revenue Accounting (9.2):</b> Managing the financial settlement of the service.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-3xl font-semibold text-scando-dark-gray mb-3">4. Apply a Life Cycle Perspective</h4>
+                    <p class="text-base font-light text-gray-600">We view this process through a complete life cycle lens to ensure a seamless customer experience. This means managing the hand-offs between teams effectively—from sales to delivery, and from delivery to finance. The goal is to create a single, unified journey for the client, where each stage builds upon the last, reinforcing the value and professionalism of Valor Egypt.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white text-scando-dark-gray text-center p-6 mt-16 border-t border-gray-200">
+        <p class="text-sm">&copy; 2025 Valor Egypt | Developed by Scando Integrated Solution</p>
+    </footer>
+
+</body>
+</html>
