@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valor Egypt - Design-to-Publish E2E Process</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- BPMN.js library -->
+    <link rel="stylesheet" href="https://unpkg.com/bpmn-js@17.1.0/dist/assets/bpmn-js.css">
+    <script src="https://unpkg.com/bpmn-js@17.1.0/dist/bpmn-viewer.development.js"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        h1, h2, h3, h4, .process-flow-title {
+            font-family: 'Caveat', cursive;
+        }
+        /* Scando Solutions Color Inspiration */
+        :root {
+            --scando-blue: #0A2342;
+            --scando-gold: #D4AF37; 
+            --scando-light-gray: #f8f9fa;
+            --scando-dark-gray: #343a40;
+        }
+        .bg-scando-blue { background-color: var(--scando-blue); }
+        .text-scando-gold { color: var(--scando-gold); }
+        .bg-scando-light-gray { background-color: var(--scando-light-gray); }
+        .text-scando-dark-gray { color: var(--scando-dark-gray); }
+        
+        .font-semibold { font-weight: 600; }
+        .font-normal { font-weight: 400; }
+        .font-light { font-weight: 300; }
+
+        #bpmn-container {
+            height: 700px;
+            width: 100%;
+            background-color: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+        }
+        .bjs-powered-by {
+            display: none !important;
+        }
+        .content-section {
+            background-color: white;
+            padding: 2rem 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-scando-light-gray text-scando-dark-gray">
+    <header class="bg-white/80 backdrop-blur-lg text-scando-dark-gray shadow-sm sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 lg:px-8 flex justify-between items-center h-20">
+            <!-- Left Side: Icon and Title -->
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="https://i.ibb.co/8DprynwC/scandoicon.png" alt="Scando Integrated Solution Icon" class="h-10 w-10 object-contain" onerror="this.style.display='none'">
+                <h1 class="text-3xl font-bold text-scando-blue">Valor Egypt</h1>
+            </a>
+
+            <!-- Right Side: Navigation Links -->
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="index.html" class="text-base font-normal hover:text-scando-blue transition-colors duration-300">Back to Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 lg:px-8 py-12">
+        <section id="process-header" class="mb-12 text-center">
+            <h2 class="text-6xl font-bold text-scando-blue">Design-to-Publish</h2>
+            <p class="mt-4 text-xl font-light text-gray-600 max-w-3xl mx-auto">This document outlines the end-to-end Design-to-Publish process, which covers the entire journey from course creation to final publication and marketing.</p>
+        </section>
+
+        <!-- Process Definition -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">1. Process Definition</h3>
+            <p class="text-base font-light text-gray-600">The Design-to-Publish (D2P) process is a comprehensive framework that guides the creation, development, and launch of training courses. It encompasses everything from initial course design and content creation to marketing, pricing strategy, and final publication.</p>
+        </div>
+        
+        <!-- Objectives -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">2. Objectives</h3>
+            <p class="text-base font-light text-gray-600 mb-4">The primary objectives of the D2P process are to:</p>
+            <ul class="list-disc list-inside text-base font-light text-gray-600 space-y-2">
+                <li>Ensure consistent quality in course design and content development</li>
+                <li>Streamline the course creation and publication process</li>
+                <li>Maximize course visibility and marketability</li>
+                <li>Maintain effective communication with all stakeholders</li>
+                <li>Establish clear pricing strategies aligned with market demands</li>
+            </ul>
+        </div>
+
+        <!-- Scope -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">3. Scope</h3>
+            <p class="text-base font-light text-gray-600">The process begins with the initial course concept and design phase and concludes with the successful publication and marketing of the course. It includes all aspects of course development, session planning, speaker management, pricing strategy, marketing material creation, and communication planning.</p>
+        </div>
+
+        <!-- Process Model -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">4. Process Model</h3>
+            <p class="text-base font-light text-gray-600 mb-6">The following BPMN diagram illustrates the flow of activities and departmental hand-offs within the Design-to-Publish process.</p>
+            <div id="bpmn-container"></div>
+        </div>
+
+        <!-- Stakeholders -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">5. Stakeholders</h3>
+            <p class="text-base font-light text-gray-600 mb-4">This end-to-end process involves collaboration across multiple functions. Key stakeholders include:</p>
+            <ul class="list-disc list-inside text-base font-light text-gray-600 space-y-2">
+                <li><b>Course Design Team:</b> Responsible for curriculum development and content creation</li>
+                <li><b>Training Coordinators:</b> Handle session planning and speaker management</li>
+                <li><b>Marketing Team:</b> Develops and executes marketing strategies and materials</li>
+                <li><b>Finance Team:</b> Manages pricing strategies and payment systems</li>
+                <li><b>External Speakers:</b> Subject matter experts who deliver the training</li>
+            </ul>
+        </div>
+        
+        <!-- Processes Included -->
+        <div class="content-section">
+            <h3 class="text-4xl font-bold text-scando-blue mb-4">6. Processes Included</h3>
+            <p class="text-base font-light text-gray-600">The D2P flow encompasses several Level 3 processes from our SOP Framework. The primary components are:</p>
+            <div class="mt-6 space-y-4">
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">4.1.1 Course Design & Development</h4>
+                    <p class="text-sm font-light text-gray-600">Create and structure course content, including learning objectives, curriculum, and materials.</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">4.1.2 Session Planning</h4>
+                    <p class="text-sm font-light text-gray-600">Schedule and organize training sessions, including logistics and resource allocation.</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">4.2.1 Speaker Management</h4>
+                    <p class="text-sm font-light text-gray-600">Identify, vet, and coordinate with subject matter experts and trainers.</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">6.3.1 Pricing Strategy</h4>
+                    <p class="text-sm font-light text-gray-600">Develop and implement pricing models aligned with market conditions and business goals.</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">7.1.1 Marketing Materials</h4>
+                    <p class="text-sm font-light text-gray-600">Create and manage promotional content and marketing collateral.</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">7.1.2 Digital Presence</h4>
+                    <p class="text-sm font-light text-gray-600">Develop and maintain landing pages and online course presence.</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h4 class="font-semibold text-lg text-scando-dark-gray">7.2.1 Communication Planning</h4>
+                    <p class="text-sm font-light text-gray-600">Plan and execute communication strategies for course promotion and engagement.</p>
+                </div>
+            </div>
+        </div>
+    </main>    <footer class="bg-white text-scando-dark-gray text-center p-6 mt-16 border-t border-gray-200">
+        <p class="text-sm">&copy; 2025 Valor Egypt | Developed by Scando Integrated Solution</p>
+    </footer>
+
+    <script>
+        const bpmnContainer = document.getElementById('bpmn-container');
+        const bpmnViewer = new BpmnJS({
+            container: bpmnContainer
+        });
+
+        const bpmnXML = `<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:collaboration id="Collaboration_1">
+    <bpmn:participant id="Participant_Process" name="Valor Egypt Design-to-Publish Process" processRef="Process_1" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_1">
+      <bpmn:lane id="Lane_Design" name="Course Design">
+        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_4_1_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_4_1_2</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Coordination" name="Training Coordination">
+        <bpmn:flowNodeRef>Task_4_2_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_6_3_1</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Marketing" name="Marketing">
+        <bpmn:flowNodeRef>Task_7_1_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_7_1_2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Task_7_2_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>EndEvent_1</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="StartEvent_1" name="Course Initiative">
+      <bpmn:outgoing>Flow_1</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Task_4_1_1" name="Course Design &amp; Development (4.1.1)">
+      <bpmn:incoming>Flow_1</bpmn:incoming>
+      <bpmn:outgoing>Flow_2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_4_1_2" name="Session Planning (4.1.2)">
+      <bpmn:incoming>Flow_2</bpmn:incoming>
+      <bpmn:outgoing>Flow_3</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_4_2_1" name="Speaker Management (4.2.1)">
+      <bpmn:incoming>Flow_3</bpmn:incoming>
+      <bpmn:outgoing>Flow_4</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_6_3_1" name="Pricing Strategy (6.3.1)">
+      <bpmn:incoming>Flow_4</bpmn:incoming>
+      <bpmn:outgoing>Flow_5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_7_1_1" name="Marketing Materials (7.1.1)">
+      <bpmn:incoming>Flow_5</bpmn:incoming>
+      <bpmn:outgoing>Flow_6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_7_1_2" name="Digital Presence (7.1.2)">
+      <bpmn:incoming>Flow_6</bpmn:incoming>
+      <bpmn:outgoing>Flow_7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Task_7_2_1" name="Communication Planning (7.2.1)">
+      <bpmn:incoming>Flow_7</bpmn:incoming>
+      <bpmn:outgoing>Flow_8</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="EndEvent_1" name="Course Published">
+      <bpmn:incoming>Flow_8</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_4_1_1" />
+    <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_4_1_1" targetRef="Task_4_1_2" />
+    <bpmn:sequenceFlow id="Flow_3" sourceRef="Task_4_1_2" targetRef="Task_4_2_1" />
+    <bpmn:sequenceFlow id="Flow_4" sourceRef="Task_4_2_1" targetRef="Task_6_3_1" />
+    <bpmn:sequenceFlow id="Flow_5" sourceRef="Task_6_3_1" targetRef="Task_7_1_1" />
+    <bpmn:sequenceFlow id="Flow_6" sourceRef="Task_7_1_1" targetRef="Task_7_1_2" />
+    <bpmn:sequenceFlow id="Flow_7" sourceRef="Task_7_1_2" targetRef="Task_7_2_1" />
+    <bpmn:sequenceFlow id="Flow_8" sourceRef="Task_7_2_1" targetRef="EndEvent_1" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1">
+      <bpmndi:BPMNShape id="Participant_Process_di" bpmnElement="Participant_Process" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="1350" height="450" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Design_di" bpmnElement="Lane_Design" isHorizontal="true">
+        <dc:Bounds x="190" y="80" width="1320" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Coordination_di" bpmnElement="Lane_Coordination" isHorizontal="true">
+        <dc:Bounds x="190" y="230" width="1320" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_Marketing_di" bpmnElement="Lane_Marketing" isHorizontal="true">
+        <dc:Bounds x="190" y="380" width="1320" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="242" y="142" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="226" y="185" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_4_1_1_di" bpmnElement="Task_4_1_1">
+        <dc:Bounds x="330" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_4_1_2_di" bpmnElement="Task_4_1_2">
+        <dc:Bounds x="480" y="120" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_4_2_1_di" bpmnElement="Task_4_2_1">
+        <dc:Bounds x="630" y="265" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_6_3_1_di" bpmnElement="Task_6_3_1">
+        <dc:Bounds x="780" y="265" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_7_1_1_di" bpmnElement="Task_7_1_1">
+        <dc:Bounds x="930" y="415" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_7_1_2_di" bpmnElement="Task_7_1_2">
+        <dc:Bounds x="1080" y="415" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_7_2_1_di" bpmnElement="Task_7_2_1">
+        <dc:Bounds x="1230" y="415" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_1_di" bpmnElement="EndEvent_1">
+        <dc:Bounds x="1382" y="437" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1365" y="480" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="278" y="160" />
+        <di:waypoint x="330" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="430" y="160" />
+        <di:waypoint x="480" y="160" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_3_di" bpmnElement="Flow_3">
+        <di:waypoint x="580" y="160" />
+        <di:waypoint x="605" y="160" />
+        <di:waypoint x="605" y="305" />
+        <di:waypoint x="630" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_4_di" bpmnElement="Flow_4">
+        <di:waypoint x="730" y="305" />
+        <di:waypoint x="780" y="305" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_5_di" bpmnElement="Flow_5">
+        <di:waypoint x="880" y="305" />
+        <di:waypoint x="905" y="305" />
+        <di:waypoint x="905" y="455" />
+        <di:waypoint x="930" y="455" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_6_di" bpmnElement="Flow_6">
+        <di:waypoint x="1030" y="455" />
+        <di:waypoint x="1080" y="455" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_7_di" bpmnElement="Flow_7">
+        <di:waypoint x="1180" y="455" />
+        <di:waypoint x="1230" y="455" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_8_di" bpmnElement="Flow_8">
+        <di:waypoint x="1330" y="455" />
+        <di:waypoint x="1382" y="455" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>`;
+
+        async function openDiagram(bpmnXML) {
+            try {
+                await bpmnViewer.importXML(bpmnXML);
+                const canvas = bpmnViewer.get('canvas');
+                canvas.zoom('fit-viewport', 'auto');
+            } catch (err) {
+                console.error('could not import BPMN 2.0 diagram', err);
+            }
+        }
+
+        openDiagram(bpmnXML);
+    </script>
+</body>
+</html>
